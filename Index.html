@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agenda Médica</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="left">
+
+      <h1>🩺 Agenda Médica</h1>
+
+      <p>
+        Selecciona una fecha disponible en el calendario.
+      </p>
+
+      <div class="leyenda">
+
+        <div class="item">
+          <span class="libre"></span>
+          Disponible
+        </div>
+
+        <div class="item">
+          <span class="ocupado"></span>
+          Ocupado
+        </div>
+
+      </div>
+
+      <!-- CALENDARIO -->
+      <div class="calendar">
+
+        <div class="calendar-header">
+
+          <button onclick="mesAnterior()">
+            ◀
+          </button>
+
+          <h2 id="mesActual"></h2>
+
+          <button onclick="mesSiguiente()">
+            ▶
+          </button>
+
+        </div>
+
+        <div class="dias-semana">
+
+          <div>Dom</div>
+          <div>Lun</div>
+          <div>Mar</div>
+          <div>Mié</div>
+          <div>Jue</div>
+          <div>Vie</div>
+          <div>Sáb</div>
+
+        </div>
+
+        <div class="dias" id="dias">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="right">
+
+      <h2>📋 Reservar Cita</h2>
+
+      <form id="formulario">
+
+        <input 
+          type="text"
+          id="nombre"
+          placeholder="Nombre completo"
+        >
+
+        <input 
+          type="number"
+          id="edad"
+          placeholder="Edad"
+        >
+        <select id="especialidad">
+
+  <option value="">
+    Seleccionar especialista
+  </option>
+
+  <option>
+    Medicina General
+  </option>
+
+  <option>
+    Pediatría
+  </option>
+
+  <option>
+    Cardiología
+  </option>
+
+  <option>
+    Dermatología
+  </option>
+
+  <option>
+    Odontología
+  </option>
+
+  <option>
+    Ginecología
+  </option>
+
+  <option>
+    Psicología
+  </option>
+
+  <option>
+    Traumatología
+  </option>
+
+</select>
+        
+
+        <textarea 
+          id="motivo"
+          placeholder="Motivo de consulta"
+        ></textarea>
+
+        <input 
+          type="date"
+          id="fecha"
+          readonly
+        >
+
+        <select id="hora">
+
+          <option value="">Seleccionar hora</option>
+
+          <option>08:00</option>
+          <option>09:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+
+        </select>
+
+        <button type="button" onclick="reservar()">
+          ✅ Reservar
+        </button>
+
+      </form>
+
+      <div class="resultado" id="resultado">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
